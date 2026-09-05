@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Weather Station Anomaly Detection</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+
+<body>
+
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>🌦 WeatherAI</h2>
+
+            <span>SIH 2026</span>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html"
+               class="nav-link">
+
+                📊 Dashboard
+
+            </a>
+
+
+            <a href="anomaly.html"
+               class="nav-link active">
+
+                🚨 Anomaly Detection
+
+            </a>
+
+
+            <a href="forecast.html"
+               class="nav-link">
+
+                🔮 Forecast Bust
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            AI Powered Weather Intelligence
+
+        </div>
+
+    </aside>
+
+
+
+    <main class="main-content">
+
+
+        <header class="page-header">
+
+            <h1>
+                🚨 Weather Station Anomaly Detection
+            </h1>
+
+            <p>
+                Enter weather station readings to detect abnormal conditions.
+            </p>
+
+        </header>
+
+
+
+        <section class="analysis-grid">
+
+
+            <!-- INPUT FORM -->
+
+            <div class="form-card">
+
+                <h2>
+                    Weather Station Reading
+                </h2>
+
+
+                <form id="anomalyForm">
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Temperature (°C)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="temperatureInput"
+                            value="29"
+                            step="0.1"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Humidity (%)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="humidityInput"
+                            value="72"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Precipitation (mm)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="precipitationInput"
+                            value="0"
+                            step="0.1"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Surface Pressure (hPa)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="pressureInput"
+                            value="1012"
+                            step="0.1"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Wind Speed (km/h)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="windSpeedInput"
+                            value="14"
+                            step="0.1"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Wind Direction (°)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="windDirectionInput"
+                            value="120"
+                            required>
+
+                    </div>
+
+
+
+                    <button
+                        type="submit"
+                        class="primary-button full-button">
+
+                        Analyze Weather Reading
+
+                    </button>
+
+
+                </form>
+
+
+            </div>
+
+
+
+            <!-- RESULT -->
+
+            <div class="result-card"
+                 id="anomalyResult">
+
+
+                <h2>
+                    AI Analysis
+                </h2>
+
+
+                <div class="empty-result">
+
+                    <div class="empty-icon">
+
+                        🤖
+
+                    </div>
+
+
+                    <p>
+
+                        Enter a weather reading and run the analysis.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- VISUALIZATION -->
+
+        <section class="chart-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Weather Reading Visualization
+                    </h2>
+
+                    <p>
+                        Comparison of submitted weather values
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="chart-container">
+
+                <canvas id="anomalyChart"></canvas>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <script src="js/api.js"></script>
+
+    <script src="js/anomaly.js"></script>
+
+
+</body>
+
+</html>

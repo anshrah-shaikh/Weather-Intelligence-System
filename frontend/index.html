@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SIH Weather Intelligence System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>🌦 WeatherAI</h2>
+            <span>SIH 2026</span>
+        </div>
+
+        <nav>
+
+            <a href="index.html"
+               class="nav-link active">
+                📊 Dashboard
+            </a>
+
+            <a href="anomaly.html"
+               class="nav-link">
+                🚨 Anomaly Detection
+            </a>
+
+            <a href="forecast.html"
+               class="nav-link">
+                🔮 Forecast Bust
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            AI Powered Weather Intelligence
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Weather Intelligence Dashboard</h1>
+
+                <p>
+                    AI-powered monitoring and weather forecast reliability analysis
+                </p>
+
+            </div>
+
+
+            <div class="system-status">
+
+                <span class="status-dot"></span>
+
+                System Online
+
+            </div>
+
+        </header>
+
+
+
+        <!-- OVERVIEW CARDS -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🌡️
+                </div>
+
+                <div>
+
+                    <p>Temperature</p>
+
+                    <h2 id="temperature">
+                        --
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    💧
+                </div>
+
+                <div>
+
+                    <p>Humidity</p>
+
+                    <h2 id="humidity">
+                        --
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🌬️
+                </div>
+
+                <div>
+
+                    <p>Wind Speed</p>
+
+                    <h2 id="windSpeed">
+                        --
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ⚠️
+                </div>
+
+                <div>
+
+                    <p>Anomalies Detected</p>
+
+                    <h2 id="anomalyCount">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- MODEL STATUS -->
+
+        <section class="model-grid">
+
+
+            <div class="model-card">
+
+                <div class="card-header">
+
+                    <h2>
+                        🚨 Weather Station Anomaly Detection
+                    </h2>
+
+                    <span class="badge active-badge">
+                        ACTIVE
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Detects abnormal weather station readings using
+                    Machine Learning.
+                </p>
+
+
+                <div class="model-status">
+
+                    <span>
+                        Model Status
+                    </span>
+
+                    <strong>
+                        🟢 Operational
+                    </strong>
+
+                </div>
+
+
+                <a href="anomaly.html"
+                   class="primary-button">
+
+                    Open Anomaly Detection →
+
+                </a>
+
+            </div>
+
+
+
+            <div class="model-card">
+
+                <div class="card-header">
+
+                    <h2>
+                        🔮 Forecast Bust Detection
+                    </h2>
+
+                    <span class="badge active-badge">
+                        ACTIVE
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Predicts whether a weather forecast is likely
+                    to significantly differ from actual conditions.
+                </p>
+
+
+                <div class="model-status">
+
+                    <span>
+                        Model Status
+                    </span>
+
+                    <strong>
+                        🟢 Operational
+                    </strong>
+
+                </div>
+
+
+                <a href="forecast.html"
+                   class="primary-button">
+
+                    Open Forecast Analysis →
+
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- WEATHER GRAPH -->
+
+        <section class="chart-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Weather Monitoring
+                    </h2>
+
+                    <p>
+                        Recent weather readings
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="chart-container">
+
+                <canvas id="weatherChart"></canvas>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SYSTEM INFORMATION -->
+
+        <section class="info-grid">
+
+
+            <div class="info-card">
+
+                <h3>
+                    📡 Data Source
+                </h3>
+
+                <p>
+                    Weather station and historical weather datasets
+                </p>
+
+            </div>
+
+
+
+            <div class="info-card">
+
+                <h3>
+                    🤖 AI Models
+                </h3>
+
+                <p>
+                    Isolation Forest + Random Forest
+                </p>
+
+            </div>
+
+
+
+            <div class="info-card">
+
+                <h3>
+                    📈 Monitoring
+                </h3>
+
+                <p>
+                    Real-time anomaly and forecast reliability analysis
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <script src="js/api.js"></script>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
